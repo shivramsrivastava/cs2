@@ -9,15 +9,14 @@
 # change these to suit your system
 CCOMP = g++
 #CCOMP = gcc-4
-#CFLAGS = -O4 -DNDEBUG
+CFLAGS = -O4 -DNDEBUG -DPRINT_ANS
 #CFLAGS = -g -DCHECK_SOLUTION -Wall
-CFLAGS = -g -Wall
+#CFLAGS = -g -Wall
 #CFLAGS = -O4 -DNDEBUG -DNO_ZERO_CYCLES
-BIN=cs2
 
 cs2.exe: cs2.c parser_cs2.c types_cs2.h timer.c
-#	$(CCOMP) $(CFLAGS) -o $(BIN) cs2.c -lm
-	$(CCOMP) $(CFLAGS) -DPRINT_ANS -DCOMP_DUALS -DCOST_RESTART -o $(BIN) cs2.c -lm
+	$(CCOMP) $(CFLAGS) -o cs2.exe cs2.c -lm
+#	$(CCOMP) $(CFLAGS) -DPRINT_ANS -DCOMP_DUALS -DCOST_RESTART -o cs2 cs2.c -lm
 
 clean:
-	rm -f $(BIN) *~
+	rm -f cs2.exe *~

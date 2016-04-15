@@ -1927,7 +1927,7 @@ int main (int argc, char **argv)
   t = timer();
   cs2 ( n, m2, ndp, arp, f_sc, c_max, cap, &cost );
   t = timer() - t;
-  
+  printf("c ALGORITHM TIME %ld\n", (long int)(t * 1000 * 1000));
   
   printf ("c time:  %15.2f     cost:  %15.0f\n", t, cost);
   
